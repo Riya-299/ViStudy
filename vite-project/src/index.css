@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400..700&family=Patrick+Hand&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #14201d;
+  --color-brand-board: #1b2824;
+  --color-brand-border: rgba(255, 255, 255, 0.15);
+  
+  /* Chalk colors */
+  --color-chalk-white: #f8fafc;
+  --color-chalk-yellow: #fef08a;
+  --color-chalk-pink: #fbcfe8;
+  --color-chalk-blue: #bae6fd;
+  --color-chalk-green: #bbf7d0;
+  
+  /* Fonts */
+  --font-sans: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-handwritten: 'Architects Daughter', cursive, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  /* Subtly grain/dust background style */
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0),
+    radial-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 0);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  color: var(--color-chalk-white);
+  margin: 0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  letter-spacing: 0.04em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-handwritten);
+}
+
+/* Chalk board visual effects */
+.chalk-shadow-white {
+  text-shadow: 0 0 3px rgba(248, 250, 252, 0.35);
+}
+
+.chalk-shadow-yellow {
+  text-shadow: 0 0 3.5px rgba(254, 240, 138, 0.35);
+}
+
+.chalk-shadow-pink {
+  text-shadow: 0 0 3.5px rgba(251, 207, 232, 0.35);
+}
+
+.chalk-shadow-blue {
+  text-shadow: 0 0 3.5px rgba(186, 230, 253, 0.35);
+}
+
+.chalk-shadow-green {
+  text-shadow: 0 0 3.5px rgba(187, 247, 208, 0.35);
+}
+
+.chalk-board-outline {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar for chalk green theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14201d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
