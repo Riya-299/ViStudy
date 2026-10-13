@@ -15,6 +15,11 @@ import ThreeGradientDescentVisualizer from "../components/visualizers/ThreeGradi
 import ThreeKMeansVisualizer from "../components/visualizers/ThreeKMeansVisualizer";
 import ThreeLoadBalancingVisualizer from "../components/visualizers/ThreeLoadBalancingVisualizer";
 import ThreeAutoScalingVisualizer from "../components/visualizers/ThreeAutoScalingVisualizer";
+import ThreeNormalizationVisualizer from "../components/visualizers/ThreeNormalizationVisualizer";
+import ThreeERDiagramVisualizer from "../components/visualizers/ThreeERDiagramVisualizer";
+import ThreeTransactionVisualizer from "../components/visualizers/ThreeTransactionVisualizer";
+import ThreeRelationalAlgebraVisualizer from "../components/visualizers/ThreeRelationalAlgebraVisualizer";
+import ThreeHashingVisualizer from "../components/visualizers/ThreeHashingVisualizer";
 
 import PlaybackControls from "../components/common/PlaybackControls";
 import CustomInputPanel from "../components/common/CustomInputPanel";
@@ -253,6 +258,89 @@ export default function TopicPage() {
           cpuLoad={currentFrame.cpuLoad}
           threshold={currentFrame.threshold}
           pods={currentFrame.pods}
+          stepLog={currentFrame.log}
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
+      );
+    }
+
+    if (topicId === "normalization" || currentFrame.phase === "UNF" || currentFrame.phase === "1NF" || currentFrame.phase === "1NF_EXPLAIN" || currentFrame.phase === "2NF" || currentFrame.phase === "2NF_EXPLAIN" || currentFrame.phase === "3NF" || currentFrame.phase === "3NF_EXPLAIN") {
+      return (
+        <ThreeNormalizationVisualizer
+          phase={currentFrame.phase}
+          tables={currentFrame.tables}
+          activeTable={currentFrame.activeTable}
+          highlight={currentFrame.highlight}
+          stepLog={currentFrame.log}
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
+      );
+    }
+
+    if (topicId === "er-diagram" || currentFrame.visibleEntities) {
+      return (
+        <ThreeERDiagramVisualizer
+          visibleEntities={currentFrame.visibleEntities}
+          visibleRelationships={currentFrame.visibleRelationships}
+          highlightEntity={currentFrame.highlightEntity}
+          highlightRel={currentFrame.highlightRel}
+          entities={currentFrame.entities}
+          relationships={currentFrame.relationships}
+          stepLog={currentFrame.log}
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
+      );
+    }
+
+    if (topicId === "transaction" || currentFrame.txLog) {
+      return (
+        <ThreeTransactionVisualizer
+          phase={currentFrame.phase}
+          balanceA={currentFrame.balanceA}
+          balanceB={currentFrame.balanceB}
+          txLog={currentFrame.txLog}
+          activeOp={currentFrame.activeOp}
+          committed={currentFrame.committed}
+          rolledBack={currentFrame.rolledBack}
+          acid={currentFrame.acid}
+          stepLog={currentFrame.log}
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
+      );
+    }
+
+    if (topicId === "relational-algebra" || currentFrame.expression) {
+      return (
+        <ThreeRelationalAlgebraVisualizer
+          phase={currentFrame.phase}
+          operation={currentFrame.operation}
+          expression={currentFrame.expression}
+          inputRelation={currentFrame.inputRelation}
+          outputRelation={currentFrame.outputRelation}
+          students={currentFrame.students}
+          departments={currentFrame.departments}
+          highlightCols={currentFrame.highlightCols}
+          highlightRows={currentFrame.highlightRows}
+          stepLog={currentFrame.log}
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
+      );
+    }
+
+    if (topicId === "hashing" || currentFrame.hashTable) {
+      return (
+        <ThreeHashingVisualizer
+          phase={currentFrame.phase}
+          hashTable={currentFrame.hashTable}
+          currentKey={currentFrame.currentKey}
+          currentBucket={currentFrame.currentBucket}
+          isCollision={currentFrame.isCollision}
+          hashFunction={currentFrame.hashFunction}
           stepLog={currentFrame.log}
           currentStep={currentStep}
           totalSteps={totalSteps}

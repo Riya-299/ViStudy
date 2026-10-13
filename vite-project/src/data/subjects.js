@@ -145,6 +145,56 @@ export const subjects = [
           keyConcepts: ["Multi-way Node Splitting", "Disk Page Block Optimization", "Balanced Tree Height"],
           complexity: { best: "O(log n)", average: "O(log n)", worst: "O(log n)", space: "O(n)" }
         }
+      },
+      {
+        id: "normalization",
+        title: "Normalization (1NF → 2NF → 3NF)",
+        desc: "The process of decomposing a relation into smaller, well-structured tables to eliminate redundancy and update anomalies.",
+        theory: {
+          overview: "Normalization progressively removes data anomalies by applying normal forms. 1NF enforces atomic values; 2NF eliminates partial dependencies; 3NF removes transitive dependencies.",
+          keyConcepts: ["Functional Dependencies", "Partial & Transitive Dependencies", "Decomposition into Boyce-Codd NF"],
+          complexity: { best: "O(n)", average: "O(n²)", worst: "O(n²)", space: "O(n)" }
+        }
+      },
+      {
+        id: "er-diagram",
+        title: "ER Diagram",
+        desc: "Entity-Relationship modeling: entities, attributes, and relationships visualized as a conceptual database blueprint.",
+        theory: {
+          overview: "ER Diagrams model real-world data as entities (rectangles), attributes (ovals), and relationships (diamonds) with cardinality constraints (1:1, 1:N, M:N).",
+          keyConcepts: ["Entities & Primary Keys", "Relationship Cardinality (1:1, 1:N, M:N)", "Weak Entities & Participation Constraints"],
+          complexity: { best: "O(E + R)", average: "O(E + R)", worst: "O(E + R)", space: "O(E + R)" }
+        }
+      },
+      {
+        id: "transaction",
+        title: "Transactions & ACID Properties",
+        desc: "Database transactions ensure reliable execution through Atomicity, Consistency, Isolation, and Durability guarantees.",
+        theory: {
+          overview: "A transaction is a logical unit of work. ACID properties guarantee that database operations are processed reliably: Atomicity (all-or-nothing), Consistency (valid state), Isolation (concurrent safety), Durability (crash recovery).",
+          keyConcepts: ["Atomicity — All or Nothing", "Commit & Rollback Mechanisms", "Concurrency Control & Serializability"],
+          complexity: { best: "O(1)", average: "O(n ops)", worst: "O(n ops)", space: "O(log size)" }
+        }
+      },
+      {
+        id: "relational-algebra",
+        title: "Relational Algebra",
+        desc: "Formal query language using operators like Selection (σ), Projection (π), Join (⋈), and Rename (ρ) on relations.",
+        theory: {
+          overview: "Relational Algebra is the mathematical foundation of SQL. Operators transform input relations into output relations: σ filters rows, π selects columns, ⋈ joins tables, and ρ renames relations.",
+          keyConcepts: ["σ Selection — Filter Rows", "π Projection — Pick Columns", "⋈ Natural Join — Merge Relations"],
+          complexity: { best: "O(n)", average: "O(n²)", worst: "O(n²)", space: "O(n)" }
+        }
+      },
+      {
+        id: "hashing",
+        title: "Hashing & Indexing",
+        desc: "Hash-based indexing maps keys to buckets using a hash function, with chaining for collision resolution.",
+        theory: {
+          overview: "Hashing computes h(k) = k mod m to find the bucket for key k. Separate Chaining handles collisions by maintaining a linked list at each bucket. Average lookup is O(1 + α) where α is the load factor.",
+          keyConcepts: ["Hash Function Design", "Collision Resolution (Chaining / Open Addressing)", "Load Factor α = n/m"],
+          complexity: { best: "O(1)", average: "O(1 + α)", worst: "O(n)", space: "O(n + m)" }
+        }
       }
     ]
   },

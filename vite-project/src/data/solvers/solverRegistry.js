@@ -19,6 +19,11 @@ import { solveGradientDescent } from "./gradientDescentSolver";
 import { solveKMeans } from "./kMeansSolver";
 import { solveLoadBalancing } from "./loadBalancingSolver";
 import { solveAutoScaling } from "./autoScalingSolver";
+import { solveNormalization } from "./normalizationSolver";
+import { solveERDiagram } from "./erDiagramSolver";
+import { solveTransaction } from "./transactionSolver";
+import { solveRelationalAlgebra } from "./relationalAlgebraSolver";
+import { solveHashing } from "./hashingSolver";
 
 export const solverRegistry = {
   "bubble-sort":       solveBubbleSort,
@@ -39,4 +44,9 @@ export const solverRegistry = {
   "k-means":           solveKMeans,
   "load-balancing":    solveLoadBalancing,
   "auto-scaling":      solveAutoScaling,
+  "normalization":     solveNormalization,
+  "er-diagram":        solveERDiagram,
+  "transaction":       solveTransaction,
+  "relational-algebra":solveRelationalAlgebra,
+  "hashing":           solveHashing,
 };
